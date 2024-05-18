@@ -1,0 +1,49 @@
+{
+  "name": "riccardo-lardi/craft-video-dimensions",
+  "description": "Simple Plugin that stores video dimensions after asset save.",
+  "type": "craft-plugin",
+  "license": "proprietary",
+  "support": {
+    "email": "hello@riccardolardi.com",
+    "issues": "https://github.com/riccardolardi/craft-video-dimensions/issues?state=open",
+    "source": "https://github.com/riccardolardi/craft-video-dimensions",
+    "docs": "https://github.com/riccardolardi/craft-video-dimensions",
+    "rss": "https://github.com/riccardolardi/craft-video-dimensions/releases.atom"
+  },
+  "require": {
+    "php": ">=8.2",
+    "craftcms/cms": ">=4.9.4",
+    "james-heinrich/getid3": "^1.9.23"
+  },
+  "require-dev": {
+    "craftcms/ecs": "dev-main",
+    "craftcms/phpstan": "dev-main"
+  },
+  "autoload": {
+    "psr-4": {
+      "riccardolardi\\craftvideodimensions\\": "src/"
+    }
+  },
+  "extra": {
+    "handle": "video-dimensions",
+    "name": "Video Dimensions",
+    "developer": "Riccardo Lardi",
+    "documentationUrl": "https://github.com/riccardolardi/craft-video-dimensions",
+    "class": "riccardolardi\\craftvideodimensions\\VideoDimensions"
+  },
+  "scripts": {
+    "check-cs": "ecs check --ansi",
+    "fix-cs": "ecs check --ansi --fix",
+    "phpstan": "phpstan --memory-limit=1G"
+  },
+  "config": {
+    "sort-packages": true,
+    "platform": {
+      "php": "8.2"
+    },
+    "allow-plugins": {
+      "yiisoft/yii2-composer": true,
+      "craftcms/plugin-installer": true
+    }
+  }
+}
