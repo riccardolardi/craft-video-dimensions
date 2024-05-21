@@ -4,7 +4,7 @@ Simple Plugin that stores video dimensions after asset save.
 
 ## Requirements
 
-This plugin requires Craft CMS 4.9.4 or later, and PHP 8.2 or later.
+This plugin requires Craft CMS 4.0 or later, and PHP 8.0 or later.
 
 ## Installation
 
