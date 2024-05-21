@@ -12,8 +12,8 @@
     "rss": "https://github.com/riccardolardi/craft-video-dimensions/releases.atom"
   },
   "require": {
-    "php": ">=8.2",
-    "craftcms/cms": ">=4.9.4",
+    "php": ">=8.0",
+    "craftcms/cms": "^4.0|^5.0",
     "james-heinrich/getid3": "^1.9.23"
   },
   "require-dev": {
@@ -40,7 +40,7 @@
   "config": {
     "sort-packages": true,
     "platform": {
-      "php": "8.2"
+      "php": "8.0"
     },
     "allow-plugins": {
       "yiisoft/yii2-composer": true,
