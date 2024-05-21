@@ -2,7 +2,7 @@
 
 namespace riccardolardi\craftvideodimensions;
 
-require_once "/var/www/html/vendor/autoload.php";
+require_once CRAFT_VENDOR_PATH . '/autoload.php';
 
 use Craft;
 use craft\base\Plugin;
