@@ -8,6 +8,7 @@ use Craft;
 use craft\base\Plugin;
 use craft\elements\Asset;
 use craft\events\ModelEvent;
+use craft\helpers\FileHelper;
 use yii\base\Event;
 use getID3;
 
@@ -21,7 +22,7 @@ use getID3;
  */
 class VideoDimensions extends Plugin
 {
-    public string $schemaVersion = '1.0.0';
+    public string $schemaVersion = '1.0.1';
 
     public static function config(): array
     {
@@ -57,10 +58,15 @@ class VideoDimensions extends Plugin
                     // get asset file path
                     $assetFilePath = '';
                     $fsPath = Craft::getAlias($asset->getVolume()->fs->path);
-                    $assetFilePath = $fsPath . DIRECTORY_SEPARATOR . $asset->getPath();
+                    $subPath = Craft::getAlias($asset->getVolume()->subpath);
+                    $assetFilePath = FileHelper::normalizePath(($fsPath . DIRECTORY_SEPARATOR . $subPath . DIRECTORY_SEPARATOR . $asset->getPath()));
                     // get video dimensions
                     $getID3 = new getID3;
                     $file = $getID3->analyze($assetFilePath);
+                    if (isset($file['error'])) {
+                        Craft::error('Error analyzing video file: ' . $file['error'], __METHOD__);
+                        return;
+                    }
                     $width = $file['video']['resolution_x'];
                     $height = $file['video']['resolution_y'];
                     // get asset record
