@@ -1,6 +1,6 @@
 {
   "name": "riccardo-lardi/craft-video-dimensions",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Plugin that stores video dimensions after asset save.",
   "type": "craft-plugin",
   "license": "proprietary",
